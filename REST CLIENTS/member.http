@@ -1,0 +1,121 @@
+// MEMBERS REST CLIENT 
+
+// Create a new Member
+### ADMIN
+post http://localhost:8080/api/members
+Content-Type: application/json
+
+
+{
+    "username": "admin",
+    "email": "admin@email.com",
+    "password": "123456",
+    "active": true,
+    "roles": ["admin"],
+    "branch": "KL",
+    "dept": "BI"
+}
+
+
+
+### MANAGER & ADJUSTER
+post http://localhost:8080/api/members
+Content-Type: application/json
+
+
+{
+    "username": "manadj",
+    "email": "manadj@email.com",
+    "password": "123456",
+    "active": true,
+    "roles": ["manager", "adjuster"]
+}
+
+
+
+### MANAGER
+post http://localhost:8080/api/members
+Content-Type: application/json
+
+
+{
+    "username": "Manager",
+    "email": "manager@email.com",
+    "password": "123456",
+    "active": true,
+    "roles": ["manager"]
+}
+
+
+# SIGNIN
+// MANAGER signin
+###
+post http://localhost:8080/api/auth/signin
+Content-Type: application/json
+
+{
+    "email": "manager@email.com",
+    "password": "123456"
+}
+
+
+// for public access
+###
+get http://localhost:8080/api/test/all
+
+
+// for loggedin users (role: user/manager/admin)
+###
+get http://localhost:8080/api/test/user
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjMxNDI1MjQzLCJleHAiOjE2MzE0Mjg4NDN9.xYPX7eO49vc-ZOaEUYcIViTZnOpiVedO2cejMbEBFf0
+
+
+// for users having manager role
+###
+get http://localhost:8080/api/test/manager
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjMxNDI1MjQzLCJleHAiOjE2MzE0Mjg4NDN9.xYPX7eO49vc-ZOaEUYcIViTZnOpiVedO2cejMbEBFf0
+
+
+// for users having admin role
+###
+get http://localhost:8080/api/test/admin
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjMxNDI1MjQzLCJleHAiOjE2MzE0Mjg4NDN9.xYPX7eO49vc-ZOaEUYcIViTZnOpiVedO2cejMbEBFf0
+
+
+
+
+# Get All Members
+###
+get http://localhost:8080/api/members
+
+# Get single Member
+###
+get http://localhost:8080/api/members/2
+
+# Update a Member
+###
+put http://localhost:8080/api/members/2
+Content-Type: application/json
+
+{
+    "active": true
+}
+
+
+# Find all Members which username contains ‘node’
+###
+get http://localhost:8080/api/members?username=admin
+
+# Find all active members
+###
+get http://localhost:8080/api/members/active
+
+
+# Delete a member
+###
+delete http://localhost:8080/api/members/3
+
+
+# Delete ALL members
+###
+delete http://localhost:8080/api/localhost:8080/api/members/
