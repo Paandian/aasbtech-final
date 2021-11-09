@@ -36,6 +36,7 @@ const db = require("./app/models");
 // const Branch = db.branches;
 // const Dept = db.depts;
 // const Ins = db.inss;
+// const Stage = db.stages;
 
 // after the first sync use the below code
 // db.sequelize.sync();
@@ -62,7 +63,9 @@ require("./app/routes/member.routes")(app);
 require("./app/routes/branch.routes")(app);
 require("./app/routes/ins.routes")(app);
 require("./app/routes/dept.routes")(app);
+require("./app/routes/stage.routes")(app);
 require("./app/routes/access.routes")(app);
+require("./app/routes/casefile.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
@@ -76,55 +79,55 @@ app.listen(PORT, () => {
 //   Role.create({
 //     id: 1,
 //     name: "ADJUSTER",
-//     brCode: "adjuster",
+//     roleCode: "adjuster",
 //   });
 
 //   Role.create({
 //     id: 2,
 //     name: "ADMIN",
-//     brCode: "admin",
+//     roleCode: "admin",
 //   });
 
 //   Role.create({
 //     id: 3,
 //     name: "BRANCH CLERK",
-//     brCode: "branchclerk",
+//     roleCode: "branchclerk",
 //   });
 
 //   Role.create({
 //     id: 4,
 //     name: "BRANCH MANAGER",
-//     brCode: "branchmanager",
+//     roleCode: "branchmanager",
 //   });
 
 //   Role.create({
 //     id: 5,
 //     name: "CLERK",
-//     brCode: "clerk",
+//     roleCode: "clerk",
 //   });
 
 //   Role.create({
 //     id: 6,
 //     name: "DIRECTOR",
-//     brCode: "director",
+//     roleCode: "director",
 //   });
 
 //   Role.create({
 //     id: 7,
 //     name: "EDITOR",
-//     brCode: "editor",
+//     roleCode: "editor",
 //   });
 
 //   Role.create({
 //     id: 8,
 //     name: "MANAGER",
-//     brCode: "manager",
+//     roleCode: "manager",
 //   });
 
 //   Role.create({
 //     id: 9,
 //     name: "STAFF",
-//     brCode: "staff",
+//     roleCode: "staff",
 //   });
 
 //   // Hardcoded Branches
@@ -198,4 +201,90 @@ app.listen(PORT, () => {
 //     name: "KURNIA",
 //     insCode: "KURNIA",
 //   });
+
+//     // Hardcoded Stages
+
+//     Stage.create({
+//       id: 1,
+//       name: "INCOMING",
+//       stageCode: "INC",
+//     });
+
+//     Stage.create({
+//       id: 2,
+//       name: "CANCELLED",
+//       stageCode: "CNL",
+//     });
+
+//     Stage.create({
+//       id: 3,
+//       name: "NEW",
+//       stageCode: "NEW",
+//     });
+
+//     Stage.create({
+//       id: 4,
+//       name: "DOCUMENTATION",
+//       stageCode: "DOC",
+//     });
+
+//     Stage.create({
+//       id: 5,
+//       name: "TRANSFERRED",
+//       stageCode: "TRF",
+//     });
+
+//     Stage.create({
+//       id: 6,
+//       name: "PENDING ACCEPTANCE",
+//       stageCode: "PDA",
+//     });
+
+//     Stage.create({
+//       id: 7,
+//       name: "INVESTIGATION",
+//       stageCode: "INVE",
+//     });
+
+//     Stage.create({
+//       id: 8,
+//       name: "EDITING",
+//       stageCode: "EDT",
+//     });
+
+//     Stage.create({
+//       id: 9,
+//       name: "APPROVAL - REPORT",
+//       stageCode: "APRR",
+//     });
+
+//     Stage.create({
+//       id: 10,
+//       name: "REPORT FORMATTING",
+//       stageCode: "REP",
+//     });
+
+//     Stage.create({
+//       id: 11,
+//       name: "INVOICING",
+//       stageCode: "INVO",
+//     });
+
+//     Stage.create({
+//       id: 12,
+//       name: "APPROVAL - INVOICING",
+//       stageCode: "APRI",
+//     });
+
+//     Stage.create({
+//       id: 13,
+//       name: "FINALIZATION ",
+//       stageCode: "FIN",
+//     });
+
+//     Stage.create({
+//       id: 14,
+//       name: "CLOSED ",
+//       stageCode: "CLO",
+//     });
 // }

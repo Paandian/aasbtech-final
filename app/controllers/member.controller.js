@@ -98,7 +98,7 @@ exports.findAll = async (req, res) => {
           // attributes: ["id", "username", "email", "password", "active"],
           // attributes: ["roleId", "userId"],
           // attributes: ["id", "name", "roleCode"],
-          attributes: ["name"],
+          attributes: ["name", "roleCode"],
           through: {
             // This block of code allows you to retrieve the properties of the join table
             model: user_roles,
@@ -176,8 +176,8 @@ exports.updateMember = (req, res) => {
       password: bcrypt.hashSync(req.body.password, 8),
       branch: req.body.branch,
       dept: req.body.dept,
-      // active: req.body.active,
-      // roles: req.body.roles
+      active: req.body.active,
+      roles: req.body.roles,
       // active: req.body.active ? req.body.active : true
     },
     {

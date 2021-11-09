@@ -24,6 +24,8 @@ db.role = require("../models/role.model.js")(sequelize, Sequelize);
 db.branches = require("../models/branch.model.js")(sequelize, Sequelize);
 db.inss = require("../models/ins.model.js")(sequelize, Sequelize);
 db.depts = require("../models/dept.model.js")(sequelize, Sequelize);
+db.stages = require("../models/stage.model.js")(sequelize, Sequelize);
+db.casefiles = require("../models/casefile.model.js")(sequelize, Sequelize);
 db.userRoles = require("../models/userRole.model.js")(sequelize, Sequelize);
 
 db.refreshToken = require("../models/refreshToken.model.js")(
