@@ -27,6 +27,7 @@ db.depts = require("../models/dept.model.js")(sequelize, Sequelize);
 db.stages = require("../models/stage.model.js")(sequelize, Sequelize);
 db.casefiles = require("../models/casefile.model.js")(sequelize, Sequelize);
 db.userRoles = require("../models/userRole.model.js")(sequelize, Sequelize);
+db.bulletin = require("./bulletin.model.js")(sequelize, Sequelize);
 
 db.refreshToken = require("../models/refreshToken.model.js")(
   sequelize,

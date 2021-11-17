@@ -66,6 +66,7 @@ require("./app/routes/dept.routes")(app);
 require("./app/routes/stage.routes")(app);
 require("./app/routes/access.routes")(app);
 require("./app/routes/casefile.routes")(app);
+require("./app/routes/bulletin.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
